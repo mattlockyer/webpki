@@ -75,6 +75,7 @@ name = "webpki"
 [features]
 default = ["std", "ring"]
 alloc = ["ring?/alloc", "pki-types/alloc"]
+web-alloc = ["ring?/alloc", "pki-types/web"]
 aws-lc-rs = ["dep:aws-lc-rs", "aws-lc-rs/aws-lc-sys", "aws-lc-rs/prebuilt-nasm"]
 aws-lc-rs-fips = ["dep:aws-lc-rs", "aws-lc-rs/fips"]
 ring = ["dep:ring"]
