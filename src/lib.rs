@@ -26,46 +26,46 @@
 //! | `ring` | Enable use of the *ring* crate for cryptography. |
 //! | `aws-lc-rs` | Enable use of the aws-lc-rs crate for cryptography. Previously this feature was named `aws_lc_rs`. |
 
-#![no_std]
-#![warn(elided_lifetimes_in_paths, unreachable_pub, clippy::use_self)]
-#![deny(missing_docs, clippy::as_conversions)]
-#![allow(
-    clippy::len_without_is_empty,
-    clippy::manual_let_else,
-    clippy::new_without_default,
-    clippy::single_match,
-    clippy::single_match_else,
-    clippy::type_complexity,
-    clippy::upper_case_acronyms
-)]
-// Enable documentation for all features on docs.rs
-#![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
+// #![no_std]
+// #![warn(elided_lifetimes_in_paths, unreachable_pub, clippy::use_self)]
+// #![deny(missing_docs, clippy::as_conversions)]
+// #![allow(
+//     clippy::len_without_is_empty,
+//     clippy::manual_let_else,
+//     clippy::new_without_default,
+//     clippy::single_match,
+//     clippy::single_match_else,
+//     clippy::type_complexity,
+//     clippy::upper_case_acronyms
+// )]
+// // Enable documentation for all features on docs.rs
+// #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
-#[cfg(any(feature = "std", test))]
-extern crate std;
+// #[cfg(any(feature = "std", test))]
+// extern crate std;
 
-#[cfg(any(test, feature = "alloc"))]
-#[cfg_attr(test, macro_use)]
-extern crate alloc;
+// #[cfg(any(test, feature = "alloc"))]
+// #[cfg_attr(test, macro_use)]
+// extern crate alloc;
 
-#[macro_use]
-mod der;
+// #[macro_use]
+// mod der;
 
-#[cfg(feature = "aws-lc-rs")]
-mod aws_lc_rs_algs;
-mod cert;
-mod end_entity;
-mod error;
-#[cfg(feature = "ring")]
-mod ring_algs;
-mod rpk_entity;
-mod signed_data;
-mod subject_name;
-mod time;
-mod trust_anchor;
+// #[cfg(feature = "aws-lc-rs")]
+// mod aws_lc_rs_algs;
+// mod cert;
+// mod end_entity;
+// mod error;
+// #[cfg(feature = "ring")]
+// mod ring_algs;
+// mod rpk_entity;
+// mod signed_data;
+// mod subject_name;
+// mod time;
+// mod trust_anchor;
 
-mod crl;
-mod verify_cert;
+// mod crl;
+// mod verify_cert;
 // mod x509;
 
 // #[cfg(test)]
