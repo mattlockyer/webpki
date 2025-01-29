@@ -57,7 +57,7 @@ mod cert;
 mod end_entity;
 mod error;
 // #[cfg(feature = "ring")]
-mod ring_algs;
+// mod ring_algs;
 mod rpk_entity;
 mod signed_data;
 mod subject_name;
@@ -89,8 +89,8 @@ pub use {
 
 pub use pki_types as types;
 
-// #[cfg(feature = "alloc")]
-// pub use crl::{OwnedCertRevocationList, OwnedRevokedCert};
+#[cfg(feature = "alloc")]
+pub use crl::{OwnedCertRevocationList, OwnedRevokedCert};
 
 // #[cfg(feature = "ring")]
 // /// Signature verification algorithm implementations using the *ring* crypto library.
@@ -119,65 +119,65 @@ pub use pki_types as types;
 //     };
 // }
 
-// /// An array of all the verification algorithms exported by this crate.
-// ///
-// /// This will be empty if the crate is built without the `ring` and `aws-lc-rs` features.
-// pub static ALL_VERIFICATION_ALGS: &[&dyn types::SignatureVerificationAlgorithm] = &[
-//     #[cfg(feature = "ring")]
-//     ring::ECDSA_P256_SHA256,
-//     #[cfg(feature = "ring")]
-//     ring::ECDSA_P256_SHA384,
-//     #[cfg(feature = "ring")]
-//     ring::ECDSA_P384_SHA256,
-//     #[cfg(feature = "ring")]
-//     ring::ECDSA_P384_SHA384,
-//     #[cfg(feature = "ring")]
-//     ring::ED25519,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PKCS1_2048_8192_SHA256,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PKCS1_2048_8192_SHA384,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PKCS1_2048_8192_SHA512,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PKCS1_3072_8192_SHA384,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
-//     #[cfg(all(feature = "ring", feature = "alloc"))]
-//     ring::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P256_SHA256,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P256_SHA384,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P384_SHA256,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P384_SHA384,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P521_SHA256,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P521_SHA384,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ECDSA_P521_SHA512,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::ED25519,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PKCS1_2048_8192_SHA256,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PKCS1_2048_8192_SHA384,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PKCS1_2048_8192_SHA512,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PKCS1_3072_8192_SHA384,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
-//     #[cfg(feature = "aws-lc-rs")]
-//     aws_lc_rs::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
-// ];
+/// An array of all the verification algorithms exported by this crate.
+///
+/// This will be empty if the crate is built without the `ring` and `aws-lc-rs` features.
+pub static ALL_VERIFICATION_ALGS: &[&dyn types::SignatureVerificationAlgorithm] = &[
+    #[cfg(feature = "ring")]
+    ring::ECDSA_P256_SHA256,
+    #[cfg(feature = "ring")]
+    ring::ECDSA_P256_SHA384,
+    #[cfg(feature = "ring")]
+    ring::ECDSA_P384_SHA256,
+    #[cfg(feature = "ring")]
+    ring::ECDSA_P384_SHA384,
+    #[cfg(feature = "ring")]
+    ring::ED25519,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PKCS1_2048_8192_SHA256,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PKCS1_2048_8192_SHA384,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PKCS1_2048_8192_SHA512,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PKCS1_3072_8192_SHA384,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
+    #[cfg(all(feature = "ring", feature = "alloc"))]
+    ring::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P256_SHA256,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P256_SHA384,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P384_SHA256,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P384_SHA384,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P521_SHA256,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P521_SHA384,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ECDSA_P521_SHA512,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::ED25519,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PKCS1_2048_8192_SHA256,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PKCS1_2048_8192_SHA384,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PKCS1_2048_8192_SHA512,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PKCS1_3072_8192_SHA384,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
+    #[cfg(feature = "aws-lc-rs")]
+    aws_lc_rs::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
+];
 
 fn public_values_eq(a: untrusted::Input<'_>, b: untrusted::Input<'_>) -> bool {
     a.as_slice_less_safe() == b.as_slice_less_safe()
