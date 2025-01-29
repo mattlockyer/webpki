@@ -57,7 +57,7 @@ mod cert;
 mod end_entity;
 mod error;
 // #[cfg(feature = "ring")]
-// mod ring_algs;
+mod ring_algs;
 mod rpk_entity;
 mod signed_data;
 mod subject_name;
@@ -89,8 +89,8 @@ pub use {
 
 pub use pki_types as types;
 
-// #[cfg(feature = "alloc")]
-// pub use crl::{OwnedCertRevocationList, OwnedRevokedCert};
+#[cfg(feature = "alloc")]
+pub use crl::{OwnedCertRevocationList, OwnedRevokedCert};
 
 // #[cfg(feature = "ring")]
 // /// Signature verification algorithm implementations using the *ring* crypto library.
