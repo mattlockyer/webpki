@@ -53,20 +53,20 @@ mod der;
 
 // #[cfg(feature = "aws-lc-rs")]
 // mod aws_lc_rs_algs;
-// mod cert;
-// mod end_entity;
+mod cert;
+mod end_entity;
 mod error;
 // #[cfg(feature = "ring")]
 // mod ring_algs;
 // mod rpk_entity;
-// mod signed_data;
-// mod subject_name;
-// mod time;
+mod signed_data;
+mod subject_name;
+mod time;
 // mod trust_anchor;
 
-// mod crl;
-// mod verify_cert;
-// mod x509;
+mod crl;
+mod verify_cert;
+mod x509;
 
 // #[cfg(test)]
 // pub(crate) mod test_utils;
@@ -78,13 +78,13 @@ pub use {
     //     RevocationCheckDepth, RevocationOptions, RevocationOptionsBuilder, RevocationReason,
     //     UnknownStatusPolicy,
     // },
-    // end_entity::EndEntityCert,
+    end_entity::EndEntityCert,
     error::{DerTypeId, Error, InvalidNameContext},
     // rpk_entity::RawPublicKeyEntity,
-    // signed_data::alg_id,
+    signed_data::alg_id,
     // trust_anchor::anchor_from_trusted_cert,
-    // verify_cert::KeyUsage,
-    // verify_cert::VerifiedPath,
+    verify_cert::KeyUsage,
+    verify_cert::VerifiedPath,
 };
 
 pub use pki_types as types;
@@ -179,6 +179,6 @@ pub use pki_types as types;
 //     aws_lc_rs::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
 // ];
 
-// fn public_values_eq(a: untrusted::Input<'_>, b: untrusted::Input<'_>) -> bool {
-//     a.as_slice_less_safe() == b.as_slice_less_safe()
-// }
+fn public_values_eq(a: untrusted::Input<'_>, b: untrusted::Input<'_>) -> bool {
+    a.as_slice_less_safe() == b.as_slice_less_safe()
+}
