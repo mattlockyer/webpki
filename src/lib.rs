@@ -58,7 +58,7 @@ mod end_entity;
 mod error;
 // #[cfg(feature = "ring")]
 // mod ring_algs;
-// mod rpk_entity;
+mod rpk_entity;
 mod signed_data;
 mod subject_name;
 mod time;
@@ -80,7 +80,7 @@ pub use {
     },
     end_entity::EndEntityCert,
     error::{DerTypeId, Error, InvalidNameContext},
-    // rpk_entity::RawPublicKeyEntity,
+    rpk_entity::RawPublicKeyEntity,
     signed_data::alg_id,
     trust_anchor::anchor_from_trusted_cert,
     verify_cert::KeyUsage,
