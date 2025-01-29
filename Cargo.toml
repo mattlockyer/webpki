@@ -79,7 +79,7 @@ aws-lc-rs = ["dep:aws-lc-rs", "aws-lc-rs/aws-lc-sys", "aws-lc-rs/prebuilt-nasm"]
 aws-lc-rs-fips = ["dep:aws-lc-rs", "aws-lc-rs/fips"]
 ring = ["dep:ring"]
 std = ["alloc", "pki-types/std"]
-near-wasm = ["ring/wasm32_unknown_unknown_js", "pki-types/web"]
+near-wasm = ["ring/alloc", "pki-types/web"]
 
 [dependencies]
 aws-lc-rs = { version = "1.9", optional = true, default-features = false }
