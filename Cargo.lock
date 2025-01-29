@@ -469,7 +469,7 @@ checksum = "917ce264624a4b4db1c364dcc35bfca9ded014d0a958cd47ad3e960e988ea51c"
 [[package]]
 name = "rustls-pki-types"
 version = "1.11.0"
-source = "git+https://github.com/mattlockyer/pki-types#b12c2afda3b604a14be0a6ce1e9d764429791d82"
+source = "git+https://github.com/mattlockyer/pki-types#8da373e6ea84f1ca072faa6aea52f9bd5ac0b12b"
 dependencies = [
  "web-time",
 ]
