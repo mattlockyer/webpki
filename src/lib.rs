@@ -89,8 +89,8 @@ pub use {
 
 pub use pki_types as types;
 
-#[cfg(feature = "alloc")]
-pub use crl::{OwnedCertRevocationList, OwnedRevokedCert};
+// #[cfg(feature = "alloc")]
+// pub use crl::{OwnedCertRevocationList, OwnedRevokedCert};
 
 // #[cfg(feature = "ring")]
 // /// Signature verification algorithm implementations using the *ring* crypto library.
