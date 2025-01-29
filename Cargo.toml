@@ -84,7 +84,7 @@ near-wasm = ["ring/wasm32_unknown_unknown_js", "pki-types/web"]
 [dependencies]
 aws-lc-rs = { version = "1.9", optional = true, default-features = false }
 pki-types = { package = "rustls-pki-types", git = "https://github.com/mattlockyer/pki-types", default-features = false }
-ring = { version = "0.17", default-features = false, optional = true }
+ring = { version = "0.17", default-features = false, optional = true, features = ["wasm32_unknown_unknown_js"] }
 untrusted = "0.9"
 
 [dev-dependencies]
