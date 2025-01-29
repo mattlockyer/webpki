@@ -429,8 +429,7 @@ checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 [[package]]
 name = "ring"
 version = "0.17.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c17fa4cb658e3583423e915b9f3acc01cceaee1860e33d59ebae66adc3a2dc0d"
+source = "git+https://github.com/mattlockyer/ring#1cab91435126a490f5f9d11002c936c30382143e"
 dependencies = [
  "cc",
  "cfg-if",
